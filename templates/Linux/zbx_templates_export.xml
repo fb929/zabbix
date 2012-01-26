@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<zabbix_export version="1.0" date="12.01.12" time="11.42">
+<zabbix_export version="1.0" date="26.01.12" time="11.58">
   <hosts>
     <host name="TPL_Linux">
       <proxy_hostid>0</proxy_hostid>
@@ -24,6 +24,42 @@
           <description>Version of zabbix_agent(d) was changed on {HOSTNAME}</description>
           <type>0</type>
           <expression>{TPL_Linux:agent.version.diff(0)}&gt;0</expression>
+          <url></url>
+          <status>0</status>
+          <priority>3</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>High disk io on the drive sda</description>
+          <type>0</type>
+          <expression>{TPL_Linux:check_disk[io,sda].last(#5)}&gt;90</expression>
+          <url></url>
+          <status>0</status>
+          <priority>3</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>High disk io on the drive sdb</description>
+          <type>0</type>
+          <expression>{TPL_Linux:check_disk[io,sdb].last(#5)}&gt;90</expression>
+          <url></url>
+          <status>0</status>
+          <priority>3</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>High disk io on the drive sdc</description>
+          <type>0</type>
+          <expression>{TPL_Linux:check_disk[io,sdc].last(#5)}&gt;90</expression>
+          <url></url>
+          <status>0</status>
+          <priority>3</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>High disk io on the drive sdd</description>
+          <type>0</type>
+          <expression>{TPL_Linux:check_disk[io,sdd].last(#5)}&gt;90</expression>
           <url></url>
           <status>0</status>
           <priority>3</priority>
@@ -286,6 +322,146 @@
           <valuemapid>0</valuemapid>
           <applications>
             <application>Processes</application>
+          </applications>
+        </item>
+        <item type="0" key="check_disk[io,sda]" value_type="0">
+          <description>Used disk $1 on $2 in %</description>
+          <ipmi_sensor></ipmi_sensor>
+          <delay>30</delay>
+          <history>7</history>
+          <trends>365</trends>
+          <status>0</status>
+          <data_type>0</data_type>
+          <units>%</units>
+          <multiplier>0</multiplier>
+          <delta>0</delta>
+          <formula>1</formula>
+          <lastlogsize>0</lastlogsize>
+          <logtimefmt></logtimefmt>
+          <delay_flex></delay_flex>
+          <authtype>0</authtype>
+          <username></username>
+          <password></password>
+          <publickey></publickey>
+          <privatekey></privatekey>
+          <params></params>
+          <trapper_hosts></trapper_hosts>
+          <snmp_community></snmp_community>
+          <snmp_oid></snmp_oid>
+          <snmp_port>161</snmp_port>
+          <snmpv3_securityname></snmpv3_securityname>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authpassphrase></snmpv3_authpassphrase>
+          <snmpv3_privpassphrase></snmpv3_privpassphrase>
+          <valuemapid>0</valuemapid>
+          <applications>
+            <application>Performance</application>
+            <application>Filesystem</application>
+          </applications>
+        </item>
+        <item type="0" key="check_disk[io,sdb]" value_type="0">
+          <description>Used disk $1 on $2 in %</description>
+          <ipmi_sensor></ipmi_sensor>
+          <delay>30</delay>
+          <history>7</history>
+          <trends>365</trends>
+          <status>0</status>
+          <data_type>0</data_type>
+          <units>%</units>
+          <multiplier>0</multiplier>
+          <delta>0</delta>
+          <formula>1</formula>
+          <lastlogsize>0</lastlogsize>
+          <logtimefmt></logtimefmt>
+          <delay_flex></delay_flex>
+          <authtype>0</authtype>
+          <username></username>
+          <password></password>
+          <publickey></publickey>
+          <privatekey></privatekey>
+          <params></params>
+          <trapper_hosts></trapper_hosts>
+          <snmp_community></snmp_community>
+          <snmp_oid></snmp_oid>
+          <snmp_port>161</snmp_port>
+          <snmpv3_securityname></snmpv3_securityname>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authpassphrase></snmpv3_authpassphrase>
+          <snmpv3_privpassphrase></snmpv3_privpassphrase>
+          <valuemapid>0</valuemapid>
+          <applications>
+            <application>Performance</application>
+            <application>Filesystem</application>
+          </applications>
+        </item>
+        <item type="0" key="check_disk[io,sdc]" value_type="0">
+          <description>Used disk $1 on $2 in %</description>
+          <ipmi_sensor></ipmi_sensor>
+          <delay>30</delay>
+          <history>7</history>
+          <trends>365</trends>
+          <status>0</status>
+          <data_type>0</data_type>
+          <units>%</units>
+          <multiplier>0</multiplier>
+          <delta>0</delta>
+          <formula>1</formula>
+          <lastlogsize>0</lastlogsize>
+          <logtimefmt></logtimefmt>
+          <delay_flex></delay_flex>
+          <authtype>0</authtype>
+          <username></username>
+          <password></password>
+          <publickey></publickey>
+          <privatekey></privatekey>
+          <params></params>
+          <trapper_hosts></trapper_hosts>
+          <snmp_community></snmp_community>
+          <snmp_oid></snmp_oid>
+          <snmp_port>161</snmp_port>
+          <snmpv3_securityname></snmpv3_securityname>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authpassphrase></snmpv3_authpassphrase>
+          <snmpv3_privpassphrase></snmpv3_privpassphrase>
+          <valuemapid>0</valuemapid>
+          <applications>
+            <application>Performance</application>
+            <application>Filesystem</application>
+          </applications>
+        </item>
+        <item type="0" key="check_disk[io,sdd]" value_type="0">
+          <description>Used disk $1 on $2 in %</description>
+          <ipmi_sensor></ipmi_sensor>
+          <delay>30</delay>
+          <history>7</history>
+          <trends>365</trends>
+          <status>0</status>
+          <data_type>0</data_type>
+          <units>%</units>
+          <multiplier>0</multiplier>
+          <delta>0</delta>
+          <formula>1</formula>
+          <lastlogsize>0</lastlogsize>
+          <logtimefmt></logtimefmt>
+          <delay_flex></delay_flex>
+          <authtype>0</authtype>
+          <username></username>
+          <password></password>
+          <publickey></publickey>
+          <privatekey></privatekey>
+          <params></params>
+          <trapper_hosts></trapper_hosts>
+          <snmp_community></snmp_community>
+          <snmp_oid></snmp_oid>
+          <snmp_port>161</snmp_port>
+          <snmpv3_securityname></snmpv3_securityname>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authpassphrase></snmpv3_authpassphrase>
+          <snmpv3_privpassphrase></snmpv3_privpassphrase>
+          <valuemapid>0</valuemapid>
+          <applications>
+            <application>Performance</application>
+            <application>Filesystem</application>
           </applications>
         </item>
         <item type="0" key="kernel.maxfiles" value_type="3">
@@ -1887,6 +2063,68 @@
       </items>
       <templates/>
       <graphs>
+        <graph name="Disk usage" width="900" height="200">
+          <ymin_type>0</ymin_type>
+          <ymax_type>1</ymax_type>
+          <ymin_item_key></ymin_item_key>
+          <ymax_item_key></ymax_item_key>
+          <show_work_period>0</show_work_period>
+          <show_triggers>0</show_triggers>
+          <graphtype>0</graphtype>
+          <yaxismin>0.0000</yaxismin>
+          <yaxismax>100.0000</yaxismax>
+          <show_legend>0</show_legend>
+          <show_3d>0</show_3d>
+          <percent_left>0.0000</percent_left>
+          <percent_right>0.0000</percent_right>
+          <graph_elements>
+            <graph_element item="TPL_Linux:vfs.fs.size[/,pused]">
+              <drawtype>2</drawtype>
+              <sortorder>0</sortorder>
+              <color>BB0000</color>
+              <yaxisside>0</yaxisside>
+              <calc_fnc>2</calc_fnc>
+              <type>0</type>
+              <periods_cnt>5</periods_cnt>
+            </graph_element>
+            <graph_element item="TPL_Linux:check_disk[io,sda]">
+              <drawtype>5</drawtype>
+              <sortorder>1</sortorder>
+              <color>009900</color>
+              <yaxisside>0</yaxisside>
+              <calc_fnc>2</calc_fnc>
+              <type>0</type>
+              <periods_cnt>5</periods_cnt>
+            </graph_element>
+            <graph_element item="TPL_Linux:check_disk[io,sdb]">
+              <drawtype>2</drawtype>
+              <sortorder>2</sortorder>
+              <color>0000BB</color>
+              <yaxisside>0</yaxisside>
+              <calc_fnc>2</calc_fnc>
+              <type>0</type>
+              <periods_cnt>5</periods_cnt>
+            </graph_element>
+            <graph_element item="TPL_Linux:check_disk[io,sdc]">
+              <drawtype>2</drawtype>
+              <sortorder>3</sortorder>
+              <color>AA00AA</color>
+              <yaxisside>0</yaxisside>
+              <calc_fnc>2</calc_fnc>
+              <type>0</type>
+              <periods_cnt>5</periods_cnt>
+            </graph_element>
+            <graph_element item="TPL_Linux:check_disk[io,sdd]">
+              <drawtype>2</drawtype>
+              <sortorder>4</sortorder>
+              <color>AAAA00</color>
+              <yaxisside>0</yaxisside>
+              <calc_fnc>2</calc_fnc>
+              <type>0</type>
+              <periods_cnt>5</periods_cnt>
+            </graph_element>
+          </graph_elements>
+        </graph>
         <graph name="Network Usage" width="900" height="200">
           <ymin_type>0</ymin_type>
           <ymax_type>0</ymax_type>
