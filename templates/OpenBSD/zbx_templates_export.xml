@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<zabbix_export version="1.0" date="12.01.12" time="11.42">
+<zabbix_export version="1.0" date="15.02.12" time="14.28">
   <hosts>
     <host name="TPL_OpenBSD">
       <proxy_hostid>0</proxy_hostid>
