@@ -1,10 +1,12 @@
 #!/bin/sh
 
+## DO NOT EDIT
+## This file is under PUPPET control
+
 #################################
 ###                           ###
 ### Script for get statistics ###
 ### from local nginx          ###
-### by Grigory Efimov         ###
 ###                           ###
 #################################
 
@@ -30,7 +32,7 @@ CACHE_FILE="/tmp/nginx_stats.cache"
 
 ### RUN
 ## Check cache file
-CACHE_FIND=`find $CACHE_FILE -mmin $CACHE_TTL`
+CACHE_FIND=`find $CACHE_FILE -mmin -$CACHE_TTL 2>/dev/null`
 if [ -z "$CACHE_FIND" ] || ! [ -s "$CACHE_FILE" ];then
 	$CURL $STATS_URL > $CACHE_FILE 2>/dev/null || exit 1
 fi

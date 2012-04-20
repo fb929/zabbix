@@ -1,9 +1,13 @@
 #!/bin/sh
 
+## DO NOT EDIT
+## This file is under PUPPET control
+
 #################################
 ###                           ###
 ### Script for get statistics ###
 ### from local php-fpm        ###
+### by Grigory Efimov         ###
 ###                           ###
 #################################
 
@@ -38,7 +42,7 @@ fi
 
 ### RUN
 ## Check cache file
-CACHE_FIND=`find $CACHE_FILE -mmin $CACHE_TTL > /dev/null 2>&1`
+CACHE_FIND=`find $CACHE_FILE -mmin -$CACHE_TTL 2> /dev/null`
 if [ -z "$CACHE_FIND" ] || ! [ -s "$CACHE_FILE" ];then
 	$CURL $STATS_URL > $CACHE_FILE 2>/dev/null || exit 1
 fi
