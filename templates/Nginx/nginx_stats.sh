@@ -22,13 +22,12 @@ EOF
 	exit 1
 fi
 
-
 ### PARAMETERS
 METRIC="$1"
 STATS_URL="${2:-http://127.0.0.1/server-status}"
 CURL="curl"
 CACHE_TTL="1"		# TTL min
-CACHE_FILE="/tmp/nginx_stats.cache"
+CACHE_FILE="/tmp/`basename $0`.cache"
 
 ### RUN
 ## Check cache file

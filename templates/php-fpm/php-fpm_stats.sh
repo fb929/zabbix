@@ -7,7 +7,6 @@
 ###                           ###
 ### Script for get statistics ###
 ### from local php-fpm        ###
-### by Grigory Efimov         ###
 ###                           ###
 #################################
 
@@ -24,7 +23,6 @@ EOF
 	exit 1
 fi
 
-
 ### PARAMETERS
 METRIC="$1"
 POOL_PORT="${2:-9001}"
@@ -32,7 +30,7 @@ STATS_URL="${3:-http://localhost/fpm_server-status$POOL_PORT}"
 PING_URL="${3:-http://localhost/fpm_ping$POOL_PORT}"
 CURL="curl"
 CACHE_TTL="1"		# TTL min
-CACHE_FILE="/tmp/fpm_stats.cache_$POOL_PORT"
+CACHE_FILE="/tmp/`basename $0`.cache_$POOL_PORT"
 
 ### for ping 
 if [ x"$METRIC" = x"ping" ]; then
