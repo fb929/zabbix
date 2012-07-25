@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<zabbix_export version="1.0" date="27.04.12" time="14.53">
+<zabbix_export version="1.0" date="25.07.12" time="16.34">
   <hosts>
     <host name="TPL_MySQL">
       <proxy_hostid>0</proxy_hostid>
@@ -26,7 +26,7 @@
           <expression>{TPL_MySQL:mysql[alive,{$MYSQL_USER},{$MYSQL_PASSWORD},{$MYSQL_SOCKET}].last(0)}&lt;1</expression>
           <url></url>
           <status>0</status>
-          <priority>5</priority>
+          <priority>4</priority>
           <comments></comments>
         </trigger>
         <trigger>
