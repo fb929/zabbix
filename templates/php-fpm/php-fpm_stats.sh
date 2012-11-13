@@ -18,7 +18,7 @@ Usage:  $0 <metric> [pool port] [url]
 Options:
 	metric   	-- statistics metric
 	pool port	-- fpm pool port, default 9001
-	url     	-- php-fpm statistics url or ping url, default http://localhost/fpm_server-status and http://localhost/fpm_ping
+	url     	-- php-fpm statistics url or ping url, default http://localhost/fpm-status?port=9001 and http://localhost/fpm-ping?port=9001
 EOF
 	exit 1
 fi
@@ -26,8 +26,8 @@ fi
 ### PARAMETERS
 METRIC="$1"
 POOL_PORT="${2:-9001}"
-STATS_URL="${3:-http://localhost/fpm_server-status$POOL_PORT}"
-PING_URL="${3:-http://localhost/fpm_ping$POOL_PORT}"
+STATS_URL="${3:-http://localhost/fpm-status?port=$POOL_PORT}"
+PING_URL="${3:-http://localhost/fpm-ping?port=$POOL_PORT}"
 CURL="curl"
 CACHE_TTL="1"		# TTL min
 CACHE_FILE="/tmp/`basename $0`.cache_$POOL_PORT"
